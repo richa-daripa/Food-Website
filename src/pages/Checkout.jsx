@@ -4,21 +4,21 @@ import { Button, Alert, Col, Container, ListGroup, Row, Form, Modal } from 'reac
 import { StoreContext } from '../contextapi/ContextAPI';
 
 const timeOptions = {
-    breakfast: ['7:00 AM', '8:00 AM', '9:00 AM'],
-    lunch: ['12:00 PM', '1:00 PM', '2:00 PM'],
-    snacks: ['4:00 PM', '5:00 PM'],
-    dinner: ['9:00 PM', '10:00 PM', '11:00 PM'],
-    preorder: ['7:00 AM', '12:00 PM', '4:00 PM', '9:00 PM'],
+    Breakfast: ['7:00 AM', '8:00 AM', '9:00 AM'],
+    Lunch: ['12:00 PM', '1:00 PM', '2:00 PM'],
+    Snacks: ['4:00 PM', '5:00 PM'],
+    Dinner: ['9:00 PM', '10:00 PM', '11:00 PM'],
+    PreOrder: ['7:00 AM', '12:00 PM', '4:00 PM', '9:00 PM'],
 };
 
-const mealCategory = ['Breakfast', 'Lunch', 'Snacks', 'Dinner', 'Pre-order'];
+const mealCategory = ['Breakfast', 'Lunch', 'Snacks', 'Dinner', 'PreOrder'];
 
 const Checkout = () => {
     const { getTotalAmount, totalQuantity } = useContext(StoreContext);
     const [showPlacedOrder, setShowPlacedOrder] = useState(false);
     const navigate = useNavigate();
 
-    const [mealType, setMealType] = useState('breakfast');
+    const [mealType, setMealType] = useState('Breakfast');
     const handleMealChange = (e) => {
         setMealType(e.target.value);
     }
@@ -57,13 +57,13 @@ const Checkout = () => {
                                 <input type="text" className="form-control" id="address" placeholder="House/Apartment/Block" required />
                             </div>
                             <div className="col-12">
-                                <label for="address2" className="form-label">Address 2 <span class="text-body-secondary">(Optional)</span></label>
+                                <label for="address2" className="form-label">Address 2 <span className="text-body-secondary">(Optional)</span></label>
                                 <input type="text" className="form-control" id="address2" placeholder="Street/Area/Locality" required />
                             </div>
                             <div className=" col-md-5">
                                 <label for="phone" className="form-label">Phone no.</label>
                                 <div className='input-group'>
-                                    <span class="input-group-text">+91</span>
+                                    <span className="input-group-text">+91</span>
                                     <input type="text" className="form-control" required></input>
                                 </div>
                             </div>
@@ -79,14 +79,15 @@ const Checkout = () => {
                         <Row className='g-3 mt-5'>
                             <h4>Delivery Timeslot</h4>
                             <Alert className='bg-info-subtle'>
-                                <p className='text-muted'><i class="bi bi-info-circle-fill me-2"></i>
+                                <p className='text-muted'><i className="bi bi-info-circle-fill me-2"></i>
                                     Our Home Chef will start preparing only after you place the order.
-                                    The available delivery slots are displayed based on the distance to your home.
+                                    The available delivery slots are displayed below.
                                 </p>
                             </Alert>
                             <div className='col-md-4'>
                                 <label className="form-label">For</label>
                                 <select className="form-select" onChange={handleMealChange} required>
+                                    <option value="" disabled selected>Select meal type</option>
                                     {
                                         mealCategory.map(i => (
                                             <option value={i}>{i}</option>
@@ -97,7 +98,8 @@ const Checkout = () => {
 
                             <div className='col-md-4'>
                                 <label className="form-label">Select time</label>
-                                <select className="form-select" >
+                                <select className="form-select" required>
+                                    <option value="" disabled selected>Set delivery time</option>
                                     {
                                         timeOptions[mealType]?.map((i, index) => (
                                             <option key={index} value={i}>{i}</option>
@@ -106,10 +108,10 @@ const Checkout = () => {
                                 </select>
                             </div>
                             {
-                                mealType === 'preorder' && (
+                                mealType === 'PreOrder' && (
                                     <div className='col-md-4'>
                                         <label for="on" className="form-label">Select date</label>
-                                        <input type="date" className='w-100 p-1 text-muted rounded-1 border-1' />
+                                        <input type="date" className='w-100 p-1 text-muted rounded-1 border-1' required/>
                                     </div>
                                 )
                             }
