@@ -15,7 +15,7 @@ const Services = () => {
                         <div className="mx-auto service-content">
                             <h3 className="fw-bold fs-4 py-2">Easy Ordering</h3>
                             <p className="text-muted">
-                                Our user-friendly platform makes ordering simple. Plus, with secure payment options, your transactions are always safe.
+                                Our user-friendly platform makes ordering simple. Plus, with secure payment options, so you can order with confidence.
                             </p>
                         </div>
                     </Col>

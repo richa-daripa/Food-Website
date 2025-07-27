@@ -12,21 +12,26 @@ const About = () => {
                 <Container >
                     <h2 className='text-center mb-5'>About Us</h2>
                     <div className='fs-5 text-justify text-indent'>
-                        <p >We believe that good
-                            food brings people together, and our mission is to make ordering your favorite meals as easy, convenient, and enjoyable as
-                            possible. We started Eatzio because we noticed a gap in the home made food experience. We wanted to create a platform that not
-                            only offered a wide variety of cuisines but also focused on seamless ordering, reliable delivery, and exceptional customer
-                            service. From humble beginnings, we've grown into a trusted name in the homemade food space, connecting countless happy customers with their culinary cravings.
-                        </p>
-                        <p>At Eatzio, we celebrate the authenticity of flavors made with love and tradition. Our carefully curated network of home chefs ensures every dish tells a story—rich with culture, freshness, and passion. Whether you're reliving childhood flavors or exploring something entirely new, our goal is to make every bite a comforting reminder of home.
-                            With every order, you're not just enjoying a meal—you’re supporting a community of talented cooks and sharing in their craft. <br />
-                        </p>
+                        <p >Are you tired of bland, uninspiring meals that leave you feeling unsatisfied? At Eatzio, we understand the need
+                            of a truely wholesome meal to nourish both body and heart. Thats why through our dedicated home chefs we wants to bring
+                             you delicious homemade meals straight from their homes. With Eatzio, you can indulge in the
+                            comforting taste of homemeade meals, just like how your mom makes with love and care!</p>
+
+                        <p>We believe that everyone deserves to enjoy delicious and healthy food, without compromising on taste or quality
+                            and our mission is to make it easy for you to access the nutritious home-cooked meals you need to thrive. We
+                            started Eatzio because we noticed a gap in the home made food experience therefore wanted to create a platform
+                            that offers a wide range of healthy alternatives to restaurant-delivered food. From humble beginnings, we've
+                            grown into a trusted name in the homemade food space, connecting countless happy customers with their culinary
+                            cravings.</p>
+
                         <p>As we continue to grow, our commitment remains unchanged: to serve you meals that are not only satisfying but also crafted with heart.
-                            We’re constantly listening, evolving, and innovating to enhance your experience—because for us, it’s not just about food, it’s about how it
+                            We are constantly listening, evolving, and innovating to enhance your experience—because for us, it’s not just about food, it’s about how it
                             makes you feel.</p>
-                        <p>Whether it’s a quick lunch between meetings, dinner with the family, or a spontaneous snack craving—Eatzio is here to
-                            make every moment a little more flavorful.</p>
-                        <p>Your trust feeds our passion. And your hunger inspires our mission.</p>
+                            
+                        <p>At Eatzio, we are dedicated to making it easy for you to access healthy and delicious homemeade food, right at your doorstep.
+                            So why settle for mediocre meals when you have the taste of home and the peace of mind that comes with knowing
+                            you are feeding yourself with home-cooked meals? Try Eatzio today and experience the difference for yourself.
+                            </p>
                     </div>
 
                 </Container>
@@ -37,24 +42,24 @@ const About = () => {
                     <img src={about1} alt="" className='d-block w-100' />
                     <Carousel.Caption className='d-flex flex-column align-items-center justify-content-center gap-4 h-100 ' >
                         <h3>Your Meal, Just How You Like It</h3>
-                        <p className='fs-5'>Ready When You Are.
-                            From breakfast to dinner, and everything in between – simply choose, click, and enjoy. Your perfect meal awaits.</p>
+                        <p className='fs-5 w-75'>Ready When You Are.
+                            From breakfast to dinner, experience the taste of home wherever you are. Your perfect meal awaits.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img src={about2} alt="" className='d-block w-100' />
                     <Carousel.Caption className='d-flex flex-column align-items-center justify-content-center gap-4 h-100 ' >
                         <h3>Discover Your Next Craving</h3>
-                        <p className='fs-5'>Hungry? We've Got You!
-                            Filter by cuisine, dietary needs, or restaurant. Whatever you're in the mood for, we'll help you find it fast.</p>
+                        <p className='fs-5 w-75'>Hungry? We've Got You!
+                            Freshly homemade meals cooked with love in our kitchen. Whatever you are in the mood for, we will cook for you.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
                     <img src={about3} alt="" className='d-block w-100' />
                     <Carousel.Caption className='d-flex flex-column align-items-center justify-content-center gap-4 h-100 '>
-                        <h3>Crafted by Experts</h3>
-                        <p className='fs-5'>
-                            Behind every delicious dish is a culinary master. We partner with skilled chefs dedicated to crafting perfect meals, just for you.</p>
+                        <h3>Crafted By Home Chefs</h3>
+                        <p className='fs-5 w-75'>
+                            Behind every delicious dish is a culinary master. We partner with dedicated home cooks passionate about creating meals, just for you.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
