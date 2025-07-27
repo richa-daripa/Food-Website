@@ -75,187 +75,187 @@ export const food_item = [
         id: "1",
         name: "Breakfast Combo",
         image: food_2,
-        price: 60,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 120,
+        description: "4 deep-fried, puffed wheat bread (puri) served with 250 ml of potato currry",
         category: "Breakfast"
     }, {
         id: "2",
         name: "Porridge",
         image: food_3,
-        price: 60,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 80,
+        description: "350ml with roasted semolina, peanuts and sauteed vegetables",
         category: "Breakfast"
     }, {
         id: "3",
         name: "Schezwan Noodles",
         image: food_4,
-        price: 85,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 95,
+        description: "350 ml of fried noodles tossed with spicy Schezwan sauce and colorful veggies",
         category: "Breakfast"
     }, {
         id: "4",
         name: "Veg Cheese Roll",
         image: food_7,
         price: 65,
-        description: "Food provides essential nutrients for overall health and well-being",
+        description: "1 piece of stuffing soft tortillas with sauted vegetables and melty cheese",
         category: "Snacks"
     }, {
         id: "5",
         name: "Paneer Roll",
         image: food_8,
         price: 45,
-        description: "Food provides essential nutrients for overall health and well-being",
+        description: "1 piece of stuffing soft flatbread with spiced paneer cubes and tangy sauces",
         category: "Snacks"
     }, {
         id: "6",
         name: "Egg Roll",
         image: food_9,
         price: 45,
-        description: "Food provides essential nutrients for overall health and well-being",
+        description: "1 piece of layering a soft flatbread with an egg, stuffing with spiced onions and ketchup",
         category: "Snacks"
     }, {
         id: "7",
         name: "Mixed Vegetable",
         image: food_10,
-        price: 32,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 75,
+        description: "250 ml of curry containing various vegetables and spices",
         category: "Vegetarian"
     }, {
         id: "8",
         name: "Paneer Curry",
         image: food_11,
-        price: 40,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 105,
+        description: "250 ml of curry containing paneer cubes in a tomato cravy",
         category: "Vegetarian"
     }, {
         id: "9",
         name: "Kidneybeans Curry",
         image: food_12,
-        price: 30,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 90,
+        description: "250 ml of curry containing red kidney beans in a spiced onion-tomato cravy",
         category: "Vegetarian"
     }, {
         id: "10",
         name: "Chickpea Curry",
         image: food_13,
-        price: 35,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 90,
+        description: "250 ml of curry containing chickpeas in a spiced onion-tomato cravy",
         category: "Vegetarian"
     }, {
         id: "11",
         name: "Boil Rice",
         image: food_14,
-        price: 24,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 75,
+        description: "500 ml of boiled rice",
         category: "Lunch"
     }, {
         id: "12",
         name: "Fried Rice",
         image: food_15,
-        price: 64,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 120,
+        description: "500 ml of cooked rice with various fried vegetables",
         category: "Lunch"
     }, {
         id: "13",
         name: "Lentil Soup",
         image: food_16,
-        price: 12,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 82,
+        description: "250 ml of simmering lentils or split pulses seasoned with cumin seeds and garlic",
         category: "Lunch"
     }, {
         id: "14",
         name: "Dinner Combo",
         image: food_18,
-        price: 72,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 110,
+        description: "4 soft tortillas made of wheat served with 250 ml of currry and salads",
         category: "Dinner"
     }, {
         id: "15",
         name: "Tortilla",
         image: food_19,
-        price: 4,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 28,
+        description: "4 soft tortillas made of wheat",
         category: "Dinner"
     }, {
         id: "16",
-        name: "Flatbread",
+        name: "Naan",
         image: food_20,
-        price: 10,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 48,
+        description: "4 soft and puffy flatbread",
         category: "Dinner"
     }, {
         id: "17",
         name: "Nuggets",
         image: food_21,
-        price: 65,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 125,
+        description: "Deeply fried 6 corns pieces coated with breadcrums",
         category: "Snacks"
     }, {
         id: "18",
         name: "Chicken Curry",
         image: food_22,
-        price: 145,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 270,
+        description: "320 ml of tender chicken in a spiced onion-tomato gravy with yogurt and spices",
         category: "Meat & Fish"
     }, {
         id: "19",
-        name: "Club Sandwich",
+        name: "Fruit Sandwich",
         image: food_23,
-        price: 70,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 85,
+        description: "2 peices of slices of soft bread layered with fresh fruits and whipped cream or jam",
         category: "Breakfast"
     },
     {
         id: "20",
         name: "Rice Pudding",
         image: food_1,
-        price: 95,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 135,
+        description: "200ml made with milk, rice, nuts, raisins, sugar, cardamom and ghee",
         category: "Dessert"
     },
     {
         id: "21",
         name: "Semolina Pudding",
         image: food_5,
-        price: 65,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 130,
+        description: "200ml made with milk, semolina, nuts, raisins, sugar, cardamom, ghee and kesar",
         category: "Dessert"
     },
     {
         id: "22",
         name: "Sevian",
         image: food_6,
-        price: 59,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 125,
+        description: "200ml made with milk, vermicelli, nuts, raisins, sugar, cardamom and ghee",
         category: "Dessert"
     }, {
         id: "23",
         name: "Fish Curry",
         image: food_17,
-        price: 135,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 165,
+        description: "1 piece tender fish in a spiced gravy made with onions, tomatoes, milk",
         category: "Meat & Fish"
     }, {
         id: "24",
         name: "Biriyani",
         image: food_24,
-        price: 179,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 290,
+        description: "500ml of rice, layered with marinated meat or vegetables and aromatic spices",
         category: "Meat & Fish"
     }
     , {
         id: "25",
         name: "Fruits Salad",
         image: food_25,
-        price: 60,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 145,
+        description: "320 ml of fresh fruits consisting of apple, banana, grapes, pineapple, papaya, pomegranate, orange tossed with honey",
         category: "Salad"
     }, {
         id: "26",
         name: "Egg Salad",
         image: food_26,
-        price: 62,
-        description: "Food provides essential nutrients for overall health and well-being",
+        price: 152,
+        description: "320 ml of chopped hard-boiled eggs with mayonnaise, mustard, and seasonings with onions and herbs",
         category: "Salad"
     }
 ]

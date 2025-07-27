@@ -11,7 +11,6 @@ const Login = ({ showLogin, setShowLogin }) => {
         reset, clearErrors
     } = useForm({ mode: 'onChange' });
 
-    const [errmsg, setErrmsg] = useState(false);
     const [currState, setCurrState] = useState("Sign Up");
     const isSignUp = currState === "Sign Up";
 
@@ -38,7 +37,8 @@ const Login = ({ showLogin, setShowLogin }) => {
                     <Modal.Title >{currState}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body >
-                    <form >
+                   
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         {isSignUp &&
                             <div className="form-floating mb-3">
                                 <input
@@ -85,16 +85,16 @@ const Login = ({ showLogin, setShowLogin }) => {
 
                         {!isSignUp ?
                             <>
-                                <p class="text-center text-muted my-3 fs-5">or</p>
+                                <p className="text-center text-muted my-3 fs-5">or</p>
                                 <Button variant="outline-danger w-100" className='mb-3 rounded-3'>
                                     <i className="bi bi-google me-2"></i>
                                     Sign in with Google
                                 </Button>
-                                <p class="my-3 text-muted">New to Eatzio? <span className='text-danger custom-toggle' onClick={() => setCurrState("Sign Up")}>SignUp</span></p>
+                                <p className="my-3 text-muted">New to Eatzio? <span className='text-danger custom-toggle' onClick={() => setCurrState("Sign Up")}>SignUp</span></p>
                             </> :
                             <>
-                                <small class="text-muted">By SignUp, you agree to the terms of use.</small>
-                                <p class="my-3">Already have an account? <span className='text-danger custom-toggle' onClick={() => setCurrState("Login")}>Login</span></p>
+                                <small className="text-muted">By SignUp, you agree to the terms of use.</small>
+                                <p className="my-3">Already have an account? <span className='text-danger custom-toggle' onClick={() => setCurrState("Login")}>Login</span></p>
                             </>
                         }
                     </form>

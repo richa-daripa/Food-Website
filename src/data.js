@@ -10,3 +10,10 @@ export function isPwdValid(value) {
   }
   return true;
 }
+
+const credentials={
+  username:'Richard',
+  email:"richard@gmail.com",
+  password: 'Ygy@657s'
+}
+export default credentials;

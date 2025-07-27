@@ -171,7 +171,7 @@ const Checkout = () => {
                 <Modal.Body className="py-2 bg-success-subtle rounded-3">
                     <div className="d-flex flex-column justify-content-center align-items-center my-3">
                         <h4 className='text-center text-success mb-4'>
-                            <i class="bi bi-check2-circle text-success me-2"></i>Order placed successfully</h4>
+                            <i className="bi bi-check2-circle text-success me-2"></i>Order placed successfully!</h4>
                         <Button className="bg-success border-0" onClick={() => navigate('/order')}>
                             Check Order Details
                         </Button>
