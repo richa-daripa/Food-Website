@@ -44,7 +44,7 @@ const NavBar = () => {
                 </Offcanvas>
 
                 <Nav className="d-none d-lg-flex gap-4 mx-auto fs-5">
-                    <Nav.Link href="#home" className='text-warning'>About</Nav.Link>
+                    <Nav.Link as={NavLink} to="/about" className='text-warning'>About</Nav.Link>
                     <Nav.Link as={NavLink} to="/menu" className='text-warning'>Menu</Nav.Link>
                     <Nav.Link href="#pricing" className='text-warning'>Services</Nav.Link>
                     <Nav.Link href="#features" className='text-warning'>Contact</Nav.Link>

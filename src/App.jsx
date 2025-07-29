@@ -8,6 +8,7 @@ import Checkout from './pages/Checkout';
 import Order from './pages/Order';
 import './style.css'
 import Cart from './pages/Cart';
+import About from './component/About';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     {!hideNavbar && <NavBar />}
       <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About/>}/>
           <Route path='/cart' element={<Cart/> } />
           <Route path='/checkout' element={<Checkout/>} />
           <Route path='/menu' element={<FoodDisplay  />} /> 
