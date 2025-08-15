@@ -33,6 +33,7 @@ import food_23 from './assets/food_23.png'
 import food_24 from './assets/food_24.png'
 import food_25 from './assets/food_25.png'
 import food_26 from './assets/food_26.png'
+import food_27 from './assets/food_27.png'
 
 
 export const menu_list = [
@@ -101,7 +102,7 @@ export const food_item = [
         category: "Snacks"
     }, {
         id: "5",
-        name: "Paneer Roll",
+        name: "Cottage Cheese Roll",
         image: food_8,
         price: 45,
         description: "1 piece of stuffing soft flatbread with spiced paneer cubes and tangy sauces",
@@ -122,7 +123,7 @@ export const food_item = [
         category: "Vegetarian"
     }, {
         id: "8",
-        name: "Paneer Curry",
+        name: "Cottage Cheese (Paneer) Curry",
         image: food_11,
         price: 105,
         description: "250 ml of curry containing paneer cubes in a tomato cravy",
@@ -257,5 +258,14 @@ export const food_item = [
         price: 152,
         description: "320 ml of chopped hard-boiled eggs with mayonnaise, mustard, and seasonings with onions and herbs",
         category: "Salad"
+    },
+    {
+        id: "27",
+        name: "Grilled Egg Sandwich",
+        image: food_27,
+        price: 50,
+        description: "2 peices of soft bread stuffed in with toasted egg, cheese and garnished with tomato and herbs ",
+        category: "Snacks"
     }
+
 ]

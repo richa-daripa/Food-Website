@@ -27,6 +27,7 @@ const Order = () => {
                                 </h4>
                                 <p>Total Bill:<strong> Rs {getTotalAmount()+39}</strong></p>
                                 <p>Delivery Address:</p>
+                                <p>Mode of Payment:</p>
                                 <ListGroup as="ol" numbered>
                                     {food_item.filter((item) => cartItems[item.id] > 0).map((item) => (
                                         <ListGroup.Item key={item.id} className="d-flex justify-content-between align-items-start">

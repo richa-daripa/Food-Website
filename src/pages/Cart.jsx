@@ -100,7 +100,7 @@ const Cart = () => {
                         )}
                         <div className="col-12 col-md-8">
                             <h5>Remove from Plate?</h5>
-                            <p>Are you sure you want to remove this item from your plate?</p>
+                            <p>Are you sure you want to remove this food item from your plate?</p>
                         </div>
                     </Row>
                 </Modal.Body>

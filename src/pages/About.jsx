@@ -2,8 +2,11 @@ import { Carousel, Container, Row, Col } from 'react-bootstrap';
 import about1 from '../assets/about1.jpeg';
 import about2 from '../assets/about2.jpeg';
 import about3 from '../assets/about3.jpg';
+import img1 from '../assets/img1.png';
 import img2 from '../assets/img2.png';
+import img3 from '../assets/img3.png';
 import '../style.css'
+import FAQ from '../component/FAQ';
 
 const About = () => {
     return (
@@ -12,7 +15,7 @@ const About = () => {
                 <Carousel.Item >
                     <img src={about1} alt="" className='d-block w-100' />
                     <Carousel.Caption className='d-flex flex-column align-items-center justify-content-center gap-4 h-100 ' >
-                        <h3>Your Meal, Just How You Like It</h3>
+                        <h2>Your Meal, Just How You Like It</h2>
                         <p className='fs-5 w-75'>Ready When You Are.
                             From breakfast to dinner, experience the taste of home wherever you are. Your perfect meal awaits.</p>
                     </Carousel.Caption>
@@ -20,7 +23,7 @@ const About = () => {
                 <Carousel.Item>
                     <img src={about2} alt="" className='d-block w-100' />
                     <Carousel.Caption className='d-flex flex-column align-items-center justify-content-center gap-4 h-100 ' >
-                        <h3>Discover Your Next Craving</h3>
+                        <h2>Discover Your Next Craving</h2>
                         <p className='fs-5 w-75'>Hungry? We've Got You!
                             Freshly homemade meals cooked with love in our kitchen. Whatever you are in the mood for, we will cook for you.</p>
                     </Carousel.Caption>
@@ -28,7 +31,7 @@ const About = () => {
                 <Carousel.Item>
                     <img src={about3} alt="" className='d-block w-100' />
                     <Carousel.Caption className='d-flex flex-column align-items-center justify-content-center gap-4 h-100 '>
-                        <h3>Crafted By Home Chefs</h3>
+                        <h2>Crafted By Home Chefs</h2>
                         <p className='fs-5 w-75'>
                             Behind every delicious dish is a culinary master. We partner with dedicated home cooks passionate about creating meals, just for you.</p>
                     </Carousel.Caption>
@@ -37,7 +40,7 @@ const About = () => {
 
             <div className='py-5 my-4'>
                 <Container >
-                    <h2 className='text-center mb-5'>Who We Are</h2>
+                    <h1 className='text-center mb-5'>Who We Are</h1>
                     <div className='fs-5 text-justify text-indent'>
                         <p >Are you tired of bland, uninspiring meals that leave you feeling unsatisfied? At Eatzio, we understand the need
                             of a truely wholesome meal to nourish both body and heart. Thats why through our dedicated home chefs we wants to bring
@@ -66,25 +69,26 @@ const About = () => {
 
             <div className='py-5 bg-warning bg-opacity-25'>
                 <Container className='d-grid px-4 '>
-                    <h2 className='text-center'>What is Eatzio?</h2>
+                    <h1 className='text-center'>What is Eatzio?</h1>
                     <Row className="align-items-center my-4">
                         <div className="col-md-7">
-                            <p className='fs-5'>Whether you're reliving childhood flavors or exploring something entirely new, our goal is to make every bite a comforting reminder of home.
-                                We believe that food should connect us—to our memories, to each other, and to the traditions that shape who we are.
+                            <h3>A Taste of Home</h3>
+                            <p className='fs-5 mt-4'>Whether you're reliving childhood flavors or exploring something entirely new, our goal is to make every bite a comforting reminder of home.
                                 That’s why we prioritize seasonal ingredients, sustainable sourcing, and locally inspired menus that reflect the diversity of our communities.
                             </p>
                         </div>
                         <div className="col-md-5">
-                            <img src={img2} alt="Delicious Welcome" className="img-fluid rounded" />
+                            <img src={img1} alt="A Taste of Home" className="img-fluid rounded" />
                         </div>
                     </Row>
 
                     <Row className="align-items-center my-4">
                         <div className="col-md-5 order-2 order-md-1">
-                            <img src={img2} alt="Flavors Await" className="img-fluid rounded" />
+                            <img src={img2} alt="Flavors Woven with Tradition" className="img-fluid rounded" />
                         </div>
                         <div className="col-md-7 order-1 order-md-2">
-                            <p className='fs-5'>At Eatzio, we celebrate the authenticity of flavors made with love and tradition.
+                            <h2>Flavors Woven with Tradition</h2>
+                            <p className='fs-5 mt-4'>At Eatzio, we celebrate the authenticity of flavors made with love and tradition.
                                 Our dishes are more than just meals—they're heartfelt expressions of heritage and home.
                             </p>
                         </div>
@@ -92,18 +96,19 @@ const About = () => {
 
                     <Row className="align-items-center my-4">
                         <div className="col-md-7">
-                            <p className='fs-5'>Our talented network of home chefs ensures every dish tells a story—rich with culture, freshness, and passion.
-                                These are individuals who pour their hearts into their food, often using cherished family recipes passed down through generations.
-                                With every order, you're not just enjoying a meal—you’re supporting a community of talented cooks and sharing in their craft.
+                            <h2>From Their Kitchen to Your Plate</h2>
+                            <p className='fs-5 mt-4'>Our talented network of home chefs ensures every dish tells a story—rich with culture, freshness, and passion.
+                                With every order, you're not just enjoying a meal, you're supporting a community of talented cooks and sharing in their craft.
                             </p>
                         </div>
                         <div className="col-md-5">
-                            <img src={img2} alt="Join Eatzio" className="img-fluid rounded" />
+                            <img src={img3} alt="From Their Kitchen to Your Plate" className="img-fluid rounded" />
                         </div>
                     </Row>
                 </Container>
             </div>
 
+        <FAQ/>
 
 
 

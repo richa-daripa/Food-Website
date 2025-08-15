@@ -16,7 +16,7 @@ const ExploreMenu = () => {
         <div className='py-5 mt-5'>
             <h2 className='text-center'>Our Menu Categories</h2>
             <Container>
-                <Row className="align-items-center justify-content-center g-4 mt-4">
+                <Row className="align-items-center justify-content-center g-4 mt-5">
                     {
                         menu_list.map((i,index) => (
                             <Col key={index} xs={12} sm={6} md={4} lg={3} className="d-flex justify-content-center">

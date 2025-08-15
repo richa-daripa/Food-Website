@@ -13,7 +13,7 @@ const CartItem = ({ id, name, image, price, description, itemObj }) => {
                 </Col>
                 <Col xs={6} md={4}>
                     <h5 className="my-0">{name}</h5>
-                    <small className="text-body-secondary d-block text-wrapping">{description}</small>
+                    <small className="text-body-secondary d-block text-wrapping py-3">{description}</small>
                     <span className="d-block">₹ {price}</span>
                 </Col>
                 <Col xs={6} md className=" d-flex justify-content-center align-items-center ">

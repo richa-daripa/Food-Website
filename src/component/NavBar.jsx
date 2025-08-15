@@ -34,7 +34,6 @@ const NavBar = () => {
                         <Nav className="flex-column fs-5">
                             <Nav.Link href="#home" className="text-warning">About</Nav.Link>
                             <Nav.Link to className="text-warning">Menu</Nav.Link>
-                            <Nav.Link href="#pricing" className="text-warning">Services</Nav.Link>
                             <Nav.Link href="#contact" className="text-warning">Contact</Nav.Link>
                             <hr />
                             <Nav.Link href="#features" className='text-warning'>My Cart</Nav.Link>
@@ -46,9 +45,7 @@ const NavBar = () => {
                 <Nav className="d-none d-lg-flex gap-4 mx-auto fs-5">
                     <Nav.Link as={NavLink} to="/about" className='text-warning'>About</Nav.Link>
                     <Nav.Link as={NavLink} to="/menu" className='text-warning'>Menu</Nav.Link>
-                    <Nav.Link href="#pricing" className='text-warning'>Services</Nav.Link>
-                    <Nav.Link href="#features" className='text-warning'>Contact</Nav.Link>
-
+                    <Nav.Link  className='text-warning'>Contact</Nav.Link>
                 </Nav>
 
                 <Button variant="warning" className="me-2" onClick={() => setShowLogin(true)}>

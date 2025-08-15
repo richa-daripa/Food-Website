@@ -14,7 +14,7 @@ const sortingOptions = {
 
 const FoodDisplay = () => {
     const { food_item } = useContext(StoreContext);
-    const [visibleItemCount, setVisibleItemCount] = useState(8);
+    const [visibleItemCount, setVisibleItemCount] = useState(12);
     const [order, setOrder] = useState(null);
     const [show, setShow] = useState(false);
 

@@ -22,21 +22,21 @@ const Footer = () => {
                         </div>
                     </Col>
 
-                   
                     <Col md={2} className='ms-md-5'>
                         <h5 className="text-white">Explore</h5>
                         <ul className="list-unstyled">
-                            <li className="mb-2 hover-link ">About</li>
-                            <li className="mb-2 hover-link ">Menu</li>
+                            <li className="mb-2 hover-link ">Blogs</li>
+                            <li className="mb-2 hover-link ">Terms & Conditions</li>
                         </ul>
                     </Col>
 
                     
                     <Col md={2}>
-                        <h5 className="text-white">Support</h5>
+                        <h5 className="text-white">We Deliver At</h5>
                         <ul className="list-unstyled">
-                            <li className="mb-2 hover-link">Delivery Partner</li>
-                            <li className="mb-2 hover-link">FAQs</li>
+                            <li className="mb-2 ">Chennai</li>
+                            <li className="mb-2 ">Hyderabad</li>
+                            <li className="mb-2 ">Mumbai</li>
                         </ul>
                     </Col>
 

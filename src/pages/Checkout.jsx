@@ -53,11 +53,11 @@ const Checkout = () => {
                                 <input type="email" className="form-control" id="email" value='abc@gmail.com' disabled readOnly />
                             </div>
                             <div className="col-12">
-                                <label for="address" className="form-label">Address</label>
+                                <label for="address" className="form-label">Address line 1</label>
                                 <input type="text" className="form-control" id="address" placeholder="House/Apartment/Block" required />
                             </div>
                             <div className="col-12">
-                                <label for="address2" className="form-label">Address 2 <span className="text-body-secondary">(Optional)</span></label>
+                                <label for="address2" className="form-label">Address line 2</label>
                                 <input type="text" className="form-control" id="address2" placeholder="Street/Area/Locality" required />
                             </div>
                             <div className=" col-md-5">
@@ -69,7 +69,11 @@ const Checkout = () => {
                             </div>
                             <div className="col-md-4">
                                 <label for="state" className="form-label">State</label>
-                                <input type="text" className="form-control" id="state" placeholder='Mumbai' disabled />
+                                <select className="form-select" required>
+                                <option value="C">Chennai</option>
+                                <option value="H">Hyderabad</option>
+                                <option value="M">Mumbai</option>
+                                </select>
                             </div>
                             <div className="col-md-3">
                                 <label for="zip" className="form-label">Pincode</label>
@@ -79,9 +83,9 @@ const Checkout = () => {
                         <Row className='g-3 mt-5'>
                             <h4>Delivery Timeslot</h4>
                             <Alert className='bg-info-subtle'>
-                                <p className='text-muted'><i className="bi bi-info-circle-fill me-2"></i>
+                                <p className='text-muted'><i className="bi bi-info-circle-fill me-2 text-primary"></i>
                                     Our Home Chef will start preparing only after you place the order.
-                                    The available delivery slots are displayed below.
+                                    The available slots are displayed below.
                                 </p>
                             </Alert>
                             <div className='col-md-4'>
@@ -111,7 +115,7 @@ const Checkout = () => {
                                 mealType === 'PreOrder' && (
                                     <div className='col-md-4'>
                                         <label for="on" className="form-label">Select date</label>
-                                        <input type="date" className='w-100 p-1 text-muted rounded-1 border-1' required/>
+                                        <input type="date" className='w-100 p-1 text-muted rounded-1 border-1' required />
                                     </div>
                                 )
                             }
@@ -143,8 +147,8 @@ const Checkout = () => {
                         </ListGroup>
 
                         <div className="col-md-12 mt-5">
-                            <label className="form-label text-danger">Special Instuctions</label>
-                            <input type="text" className="form-control " placeholder='Like prefer "less spicy"' required />
+                            <label className="form-label text-danger">Special Instuctions <span className="text-muted">(Optional)</span></label>
+                            <input type="text" className="form-control " placeholder='Like prefer "less spicy"' />
                         </div>
                         <h4 className="mb-3 mt-5 mb-4"><i className="bi bi-wallet-fill me-2"></i>Payment Method</h4>
                         <small className='text-muted'>Select any one payment mode</small>
