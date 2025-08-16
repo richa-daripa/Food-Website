@@ -18,11 +18,21 @@ const credentials = {
 }
 export default credentials;
 
+export const timeOptions = {
+    Breakfast: ['7:00 AM', '8:00 AM', '9:00 AM'],
+    Lunch: ['12:00 PM', '1:00 PM', '2:00 PM'],
+    Snacks: ['4:00 PM', '5:00 PM'],
+    Dinner: ['9:00 PM', '10:00 PM', '11:00 PM'],
+    PreOrder: ['7:00 AM', '12:00 PM', '4:00 PM', '9:00 PM'],
+};
+
+export const mealCategory = ['Breakfast', 'Lunch', 'Snacks', 'Dinner', 'PreOrder'];
+
 export const faq = [
   {
     eKey: "0",
     title: "What kind of food do you offer?",
-    text: "We offer freshly prepared, homemade meals prepared by local home chefs. Each dish is made with love and quality ingredients—just like you'd get in a home kitchen. "
+    text: "We offer freshly prepared, homemade meals prepared by local home chefs. Each dish is made with love and quality ingredients just like you'd get in a home kitchen. "
   },
     {
     eKey: "1",
@@ -32,7 +42,7 @@ export const faq = [
     {
     eKey: "2",
     title: "Can I customize my meal or request dietary preferences?",
-    text:"Yes! Many of our chefs offer customization options like less spice, vegan, or gluten-free. Just mention your preferences while placing the order, and we’ll do our best to accommodate."
+    text:"Yes! Many of our chefs offer customization options like less spice, oil, or vegan. Just mention your preferences while placing the order, and we’ll do our best to accommodate."
   },
   {
     eKey: "3",
@@ -47,12 +57,13 @@ export const faq = [
   {
     eKey: "5",
     title: "What if my food arrives late or incorrect?",
-    text:"We’re sorry if that happens! Please report the issue through the Help section in your account. Our team will investigate and offer a resolution—either a refund, replacement, or credit."
+    text:"We’re sorry if that happens! Please report the issue through the Help section in your account. Our team will investigate and offer a resolution either a refund, replacement, or credit."
   },
   {
     eKey:"6",
     title:"Do you offer subscriptions or meal plans?",
-    text:"Yes! You can subscribe to weekly or monthly homemade meal plans tailored to your taste and schedule. It’s perfect for busy professionals, students, or anyone craving consistent home-style food."
+    text:"Yes! You can subscribe to weekly or monthly homemade meal plans tailored to your taste and schedule. It’s perfect for busy professionals, students, or anyone craving consistent home style food."
   }
 ]
+
 

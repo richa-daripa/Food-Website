@@ -202,3 +202,17 @@ body {
   word-break: break-word;
 }
 
+
+/*----------------------------------------------------------*/
+.custom-button-color{
+  background: #ff8820 !important;
+  border: none !important;
+  outline: none !important;
+  color: black !important; 
+}
+.custom-button-color:hover {
+    background-color: #ff9a41 !important;
+}
+.custom-text-color{
+  color: #f4511e ;
+}

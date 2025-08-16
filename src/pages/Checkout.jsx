@@ -2,16 +2,7 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Alert, Col, Container, ListGroup, Row, Form, Modal } from 'react-bootstrap';
 import { StoreContext } from '../contextapi/ContextAPI';
-
-const timeOptions = {
-    Breakfast: ['7:00 AM', '8:00 AM', '9:00 AM'],
-    Lunch: ['12:00 PM', '1:00 PM', '2:00 PM'],
-    Snacks: ['4:00 PM', '5:00 PM'],
-    Dinner: ['9:00 PM', '10:00 PM', '11:00 PM'],
-    PreOrder: ['7:00 AM', '12:00 PM', '4:00 PM', '9:00 PM'],
-};
-
-const mealCategory = ['Breakfast', 'Lunch', 'Snacks', 'Dinner', 'PreOrder'];
+import { timeOptions,mealCategory } from '../data';
 
 const Checkout = () => {
     const { getTotalAmount, totalQuantity } = useContext(StoreContext);
@@ -32,6 +23,8 @@ const Checkout = () => {
         }
     }
 
+    
+
     return (
         <Container className='my-5'>
             <Form onSubmit={handleSubmit}>
@@ -41,38 +34,38 @@ const Checkout = () => {
 
                         <Row className='g-3'>
                             <div className="col-sm-6">
-                                <label for="firstName" className="form-label">First name</label>
+                                <label htmlForfor="firstName" className="form-label">First name</label>
                                 <input type="text" className="form-control" id="firstName" required />
                             </div>
                             <div className="col-sm-6">
-                                <label for="lastName" className="form-label">Last name</label>
+                                <label htmlForfor="lastName" className="form-label">Last name</label>
                                 <input type="text" className="form-control" id="lastName" required />
                             </div>
                             <div className="col-12">
-                                <label for="email" className="form-label">Email</label>
+                                <label htmlForfor="email" className="form-label">Email</label>
                                 <input type="email" className="form-control" id="email" value='abc@gmail.com' disabled readOnly />
                             </div>
                             <div className="col-12">
-                                <label for="address" className="form-label">Address line 1</label>
+                                <label htmlForfor="address" className="form-label">Address line 1</label>
                                 <input type="text" className="form-control" id="address" placeholder="House/Apartment/Block" required />
                             </div>
                             <div className="col-12">
-                                <label for="address2" className="form-label">Address line 2</label>
+                                <label htmlForfor="address2" className="form-label">Address line 2</label>
                                 <input type="text" className="form-control" id="address2" placeholder="Street/Area/Locality" required />
                             </div>
                             <div className=" col-md-5">
-                                <label for="phone" className="form-label">Phone no.</label>
+                                <label htmlForfor="phone" className="form-label">Phone no.</label>
                                 <div className='input-group'>
                                     <span className="input-group-text">+91</span>
                                     <input type="text" className="form-control" required></input>
                                 </div>
                             </div>
                             <div className="col-md-4">
-                                <label for="state" className="form-label">State</label>
+                                <label htmlForfor="state" className="form-label">State</label>
                                 <select className="form-select" required>
-                                <option value="C">Chennai</option>
-                                <option value="H">Hyderabad</option>
-                                <option value="M">Mumbai</option>
+                                    <option value="C">Chennai</option>
+                                    <option value="H">Hyderabad</option>
+                                    <option value="M">Mumbai</option>
                                 </select>
                             </div>
                             <div className="col-md-3">
@@ -83,7 +76,7 @@ const Checkout = () => {
                         <Row className='g-3 mt-5'>
                             <h4>Delivery Timeslot</h4>
                             <Alert className='bg-info-subtle'>
-                                <p className='text-muted'><i className="bi bi-info-circle-fill me-2 text-primary"></i>
+                                <p className='text-secondary'><i className="bi bi-info-circle-fill me-2 text-primary"></i>
                                     Our Home Chef will start preparing only after you place the order.
                                     The available slots are displayed below.
                                 </p>
@@ -123,32 +116,38 @@ const Checkout = () => {
                         </Row>
                     </Col>
                     <Col md={5} lg={4} className="p-4 rounded-4 bg-warning bg-opacity-50">
-                        <h4 className="d-flex justify-content-between align-items-center mb-3">
+                        <h4 className="d-flex justify-content-between  mb-3">
                             Total Bill
                         </h4>
                         <ListGroup>
                             <ListGroup.Item className='d-flex justify-content-between'>
                                 <div>
-                                    <h6 className="my-0">Total Food Items</h6>
+                                    <h6 className="my-0 fw-light">Total Food Items</h6>
                                 </div>
-                                <span className="text-body-secondary">{totalQuantity()}</span>
+                                <span>{totalQuantity()}</span>
                             </ListGroup.Item>
                             <ListGroup.Item className='d-flex justify-content-between'>
                                 <div>
-                                    <h6 className="my-0">Total Price</h6>
-                                    <small className="text-body-secondary">including tax and other charges</small>
+                                    <h6 className="my-0 fw-light">Total Price</h6>
                                 </div>
-                                <span className="text-body-secondary">₹ {getTotalAmount()}</span>
+                                <span >₹{getTotalAmount()}</span>
+                            </ListGroup.Item>
+                            <ListGroup.Item className='d-flex justify-content-between'>
+                                <div>
+                                    <h6 className="my-0 fw-light">Additional charges</h6>
+                                    <small className="text-body-secondary">Including tax, packaging and delivery charges</small>
+                                </div>
+                                <span>₹39</span>
                             </ListGroup.Item>
 
                             <ListGroup.Item className='d-flex justify-content-between'>
-                                <span>Grand Total</span> <strong>₹ {getTotalAmount() + 39}</strong>
+                                <span>Grand Total</span> <strong>₹{getTotalAmount() + 39}</strong>
                             </ListGroup.Item>
                         </ListGroup>
 
                         <div className="col-md-12 mt-5">
-                            <label className="form-label text-danger">Special Instuctions <span className="text-muted">(Optional)</span></label>
-                            <input type="text" className="form-control " placeholder='Like prefer "less spicy"' />
+                            <label className="form-label custom-text-color ">Special Instuctions <small className="text-secondary">(Optional)</small></label>
+                            <input type="text" className="form-control " placeholder='Prefer "less spicy"' />
                         </div>
                         <h4 className="mb-3 mt-5 mb-4"><i className="bi bi-wallet-fill me-2"></i>Payment Method</h4>
                         <small className='text-muted'>Select any one payment mode</small>
@@ -160,9 +159,11 @@ const Checkout = () => {
                             <input type="checkbox" className="btn-check " id="btn-check-2-outlined" />
                             <label className="btn btn-outline-dark w-100 text-start" for="btn-check-2-outlined"><i className="bi bi-cash me-3"></i>Cash on Delivery</label>
                         </div>
-                        <Button variant='danger w-100 mt-5' type='submit'>Place Order</Button>
-                        <hr />
-                        <Button className='bg-warning-subtle text-dark w-100 mt-5' onClick={() => navigate('/cart')}>Back to Plate</Button>
+
+                        <div className='col-12 d-grid gap-3 mt-5'>
+                            <Button className='w-100 custom-button-color' type='submit'>Place Order</Button>
+                            <Button variant='warning' className="w-100" onClick={() => navigate('/cart')}>Back to Plate</Button>
+                        </div>
                     </Col>
                 </Row>
             </Form>

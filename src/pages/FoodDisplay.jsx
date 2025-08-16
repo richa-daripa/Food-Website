@@ -80,8 +80,8 @@ const FoodDisplay = () => {
             </Container>
             {
                 visibleItemCount < filteredItems.length && (
-                    <div className="text-center mt-5">
-                        <Button className=" border-1 rounded-0 bg-warning text-secondary" onClick={handleLoadMore}>Load More</Button>
+                    <div className="text-center my-5">
+                        <Button variant='warning' className="rounded-0 text-muted" onClick={handleLoadMore}>Load More</Button>
                     </div>
                 )
             }

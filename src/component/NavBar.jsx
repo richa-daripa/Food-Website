@@ -32,12 +32,12 @@ const NavBar = () => {
                     <hr />
                     <Offcanvas.Body>
                         <Nav className="flex-column fs-5">
-                            <Nav.Link href="#home" className="text-warning">About</Nav.Link>
-                            <Nav.Link to className="text-warning">Menu</Nav.Link>
+                            <Nav.Link as={NavLink} to="/about" className="text-warning">About</Nav.Link>
+                            <Nav.Link as={NavLink} to="/menu" className="text-warning">Menu</Nav.Link>
                             <Nav.Link href="#contact" className="text-warning">Contact</Nav.Link>
                             <hr />
-                            <Nav.Link href="#features" className='text-warning'>My Cart</Nav.Link>
-                            <Nav.Link href="#features" className='text-warning'>Logout</Nav.Link>
+                            <Nav.Link className='text-secondary' onClick={()=>navigate('/cart')}>My Cart</Nav.Link>
+                            <Nav.Link href="#features" className='text-secondary'>Logout</Nav.Link>
                         </Nav>
                     </Offcanvas.Body>
                 </Offcanvas>
@@ -48,7 +48,7 @@ const NavBar = () => {
                     <Nav.Link  className='text-warning'>Contact</Nav.Link>
                 </Nav>
 
-                <Button variant="warning" className="me-2" onClick={() => setShowLogin(true)}>
+                <Button className="me-2 custom-button-color" onClick={() => setShowLogin(true)}>
                     Login
                 </Button>
 

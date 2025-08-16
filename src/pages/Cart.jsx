@@ -14,7 +14,7 @@ const Cart = () => {
             {
                 Object.keys(cartItems).length > 0 ? (
                     <>
-                        <h2 className='text-center mb-5 bg-warning bg-opacity-50 p-4'><i class="bi bi-fork-knife me-2 fs-3"></i>Your Plate </h2>
+                        <h2 className='text-center mb-5 bg-warning bg-opacity-50 my-4 p-2'><i className="bi bi-fork-knife me-2 fs-3"></i>Your Plate <i className="bi bi-cup-hot-fill ms-2"></i></h2>
                         <Container className="py-4">
                             <Row className="g-5">
                                 <Col md={7} lg={8} >
@@ -35,8 +35,8 @@ const Cart = () => {
                                 <Col md={5} lg={4}>
                                     <Card className="border-warning border-2 rounded-4">
                                         <Card.Body>
-                                            <Card.Title className="border-bottom  border-2 border-secondary-subtle pb-2">
-                                                    Price Details</Card.Title>
+                                            <Card.Title className="border-bottom fs-4 border-3 border-warning pb-2">
+                                                   <i class="bi bi-tag-fill text-secondary"></i> Price Details</Card.Title>
                                             
                                             <div className="d-flex justify-content-between border-bottom border-dark pt-2 ">
                                                 <p>Total Price</p>
@@ -45,15 +45,15 @@ const Cart = () => {
                                             <div className="d-flex justify-content-between border-bottom border-dark py-2">
                                                 <div>
                                                     <p className="my-0">Delivery partner fee</p>
-                                                    <small className="text-muted">Distance Fee</small>
+                                                    <small className="text-secondary">Distance Fee</small>
                                                 </div>
                                                 <span>₹ 29</span>
                                             </div>
                                             <div className="d-flex justify-content-between border-bottom border-dark py-2">
                                                 <div className="d-flex flex-column">
                                                     <p className="my-0">Tax & Charges</p>
-                                                    <small className="text-muted">CGST Fee: ₹2.50</small>
-                                                    <small className="text-muted">SGST Fee: ₹2.50</small>
+                                                    <small className="text-secondary">CGST Fee: ₹2.50</small>
+                                                    <small className="text-secondary">SGST Fee: ₹2.50</small>
                                                 </div>
                                                 <span>₹ 5.00</span>
                                             </div>
@@ -65,7 +65,7 @@ const Cart = () => {
                                                 <p className="fw-bold">Order Total</p>
                                                 <strong>₹ {getTotalAmount() + 39} </strong>
                                             </div>
-                                            <Button variant="warning" className="w-100 mt-4" onClick={() => navigate('/checkout')}>
+                                            <Button className="w-100 mt-4 custom-button-color" onClick={() => navigate('/checkout')}>
                                                 Proceed to Checkout
                                             </Button>
                                         </Card.Body>

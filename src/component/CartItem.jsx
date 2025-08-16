@@ -12,9 +12,9 @@ const CartItem = ({ id, name, image, price, description, itemObj }) => {
                     <img src={image} alt="" width="160" height="140" className="img-fluid" />
                 </Col>
                 <Col xs={6} md={4}>
-                    <h5 className="my-0">{name}</h5>
-                    <small className="text-body-secondary d-block text-wrapping py-3">{description}</small>
-                    <span className="d-block">₹ {price}</span>
+                    <h5 >{name}</h5>
+                    <p className="text-secondary d-block text-wrapping fs-6">{description}</p>
+                    <span className="d-block fs-5">₹ {price}</span>
                 </Col>
                 <Col xs={6} md className=" d-flex justify-content-center align-items-center ">
                     <Button variant="outline-secondary bg-body-secondary text-black" className="btn-sm" onClick={()=>removeFromCart(id)}>

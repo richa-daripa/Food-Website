@@ -16,7 +16,7 @@ const DishCard = ({id, name, image, price, description, setShow}) => {
             <Card className="bg-dark shadow border-0 h-100 rounded-4" style={{width:"18rem"}}>
                 <Card.Img variant="top" src={image} className='rounded-top-4' />
                 <CardImgOverlay className='d-flex align-items-end justify-content-end'>
-                    <Button variant="warning" size='sm' className='w-50 ' onClick={handleClick}>Add</Button>
+                    <Button variant="warning" size='sm' className='w-50 fs-6' onClick={handleClick}>Add</Button>
                 </CardImgOverlay>
                 <Card.Body className='d-flex flex-column'>
                     <Card.Title className="text-white fs-4">

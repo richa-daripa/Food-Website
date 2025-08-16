@@ -32,7 +32,7 @@ const Login = ({ showLogin, setShowLogin }) => {
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
-            <Container>
+            <Container className='mt-3'>
                 <Modal.Header className='border-bottom-0' closeButton>
                     <Modal.Title >{currState}</Modal.Title>
                 </Modal.Header>
@@ -79,22 +79,22 @@ const Login = ({ showLogin, setShowLogin }) => {
                             )}
                         </div>
 
-                        <Button variant='warning w-100' type='submit'>
+                        <Button className='w-100 custom-button-color' type='submit'>
                             {isSignUp ? "Create Account" : "Login"}
                         </Button>
 
                         {!isSignUp ?
                             <>
-                                <p className="text-center text-muted my-3 fs-5">or</p>
-                                <Button variant="outline-danger w-100" className='mb-3 rounded-3'>
+                                <p className="text-center text-secondary my-3 fs-5">or</p>
+                                <Button variant="outline-dark w-100" className='mb-3 rounded-3'>
                                     <i className="bi bi-google me-2"></i>
                                     Sign in with Google
                                 </Button>
-                                <p className="my-3 text-muted">New to Eatzio? <span className='text-danger custom-toggle' onClick={() => setCurrState("Sign Up")}>SignUp</span></p>
+                                <p className="my-3 text-muted">New to Eatzio? <span className='custom-text-color custom-toggle fw-semibold' onClick={() => setCurrState("Sign Up")}>SignUp</span></p>
                             </> :
                             <>
-                                <small className="text-muted">By SignUp, you agree to the terms of use.</small>
-                                <p className="my-3">Already have an account? <span className='text-danger custom-toggle' onClick={() => setCurrState("Login")}>Login</span></p>
+                                <small className="text-secondary">By SignUp, you agree to the terms of use.</small>
+                                <p className="my-3 text-muted ">Already have an account? <span className='custom-text-color custom-toggle fw-semibold' onClick={() => setCurrState("Login")}>Login</span></p>
                             </>
                         }
                     </form>
