@@ -6,11 +6,13 @@ import { StoreContext } from '../contextapi/ContextAPI';
 import { Container, Nav, Navbar, Button, Offcanvas, Dropdown, DropdownDivider } from 'react-bootstrap';
 import logo from '../assets/logo.png';
 import '../style.css'
+import SignUp from './SignUp';
 
 const NavBar = () => {
     const { totalQuantity } = useContext(StoreContext);
     const [showOffcanvas, setShowOffcanvas] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
+    const [showSignUp, setShowSignUp] = useState(false);
     const navigate = useNavigate();
     
 
@@ -36,8 +38,8 @@ const NavBar = () => {
                             <Nav.Link as={NavLink} to="/menu" className="text-warning">Menu</Nav.Link>
                             <Nav.Link href="#contact" className="text-warning">Contact</Nav.Link>
                             <hr />
-                            <Nav.Link className='text-secondary' onClick={()=>navigate('/cart')}>My Cart</Nav.Link>
-                            <Nav.Link href="#features" className='text-secondary'>Logout</Nav.Link>
+                            <Nav.Link className='text-warning' onClick={()=>navigate('/cart')}>My Plate</Nav.Link>
+                            <Nav.Link href="#features" className='text-warning'><i class="bi bi-box-arrow-right me-2"></i>Logout</Nav.Link>
                         </Nav>
                     </Offcanvas.Body>
                 </Offcanvas>
@@ -50,6 +52,9 @@ const NavBar = () => {
 
                 <Button className="me-2 custom-button-color" onClick={() => setShowLogin(true)}>
                     Login
+                </Button>
+                <Button className="me-2 custom-button-color" onClick={() => setShowSignUp(true)}>
+                    Sign Up
                 </Button>
 
                 <div className="d-none d-lg-flex gap-3 align-items-center">
@@ -67,7 +72,10 @@ const NavBar = () => {
                         <Dropdown.Menu align="end" data-bs-theme="light">
                             <p className='px-3'>Hi, Jannet</p>
                             <DropdownDivider />
-                            <Dropdown.Item >Logout</Dropdown.Item>
+                            <Dropdown.Item ><i class="bi bi-bag-check-fill me-2"></i>Your Orders</Dropdown.Item>
+                            <Dropdown.Item ><i class="bi bi-headset me-2"></i>Help & Support</Dropdown.Item>
+                             <DropdownDivider />
+                            <Dropdown.Item >Log Out</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
@@ -76,7 +84,7 @@ const NavBar = () => {
             </Container>
 
             <Login showLogin={showLogin} setShowLogin={setShowLogin} />
-
+            <SignUp showSignUp={showSignUp} setShowSignUp={setShowSignUp}/>
         </Navbar>
 
     )

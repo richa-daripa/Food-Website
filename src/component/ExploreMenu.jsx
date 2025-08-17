@@ -14,7 +14,7 @@ const ExploreMenu = () => {
 
     return (
         <div className='py-5 mt-5'>
-            <h2 className='text-center'>Our Menu Categories</h2>
+            <h2 className='text-center'>Menu Categories</h2>
             <Container>
                 <Row className="align-items-center justify-content-center g-4 mt-5">
                     {

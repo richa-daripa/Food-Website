@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-    {!hideNavbar && <NavBar />}
+    {!hideNavbar && <NavBar/>}
       <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About/>}/>

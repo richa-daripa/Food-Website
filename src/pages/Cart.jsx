@@ -36,7 +36,7 @@ const Cart = () => {
                                     <Card className="border-warning border-2 rounded-4">
                                         <Card.Body>
                                             <Card.Title className="border-bottom fs-4 border-3 border-warning pb-2">
-                                                   <i class="bi bi-tag-fill text-secondary"></i> Price Details</Card.Title>
+                                                   <i className="bi bi-tag-fill text-secondary"></i> Price Details</Card.Title>
                                             
                                             <div className="d-flex justify-content-between border-bottom border-dark pt-2 ">
                                                 <p>Total Price</p>

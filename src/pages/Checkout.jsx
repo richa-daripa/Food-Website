@@ -1,8 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Alert, Col, Container, ListGroup, Row, Form, Modal } from 'react-bootstrap';
 import { StoreContext } from '../contextapi/ContextAPI';
-import { timeOptions,mealCategory } from '../data';
+import { timeOptions, mealCategory } from '../data';
+import { useForm } from 'react-hook-form';
 
 const Checkout = () => {
     const { getTotalAmount, totalQuantity } = useContext(StoreContext);
@@ -13,64 +14,81 @@ const Checkout = () => {
     const handleMealChange = (e) => {
         setMealType(e.target.value);
     }
+    const [formData, setFormData] = useState(null);
+    /*
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            if (e.target.checkValidity()) {
+                setShowPlacedOrder(true);
+            } else {
+                e.target.reportValidity();
+            }
+        }*/
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (e.target.checkValidity()) {
-            setShowPlacedOrder(true);
-        } else {
-            e.target.reportValidity();
+    const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm();
+
+    useEffect(() => {
+        if (mealType !== 'PreOrder') {
+            const today = new Date().toISOString().split('T')[0];
+            setValue('on', today);
         }
-    }
+    }, [mealType])
 
-    
+    const onSubmit = (data) => {
+        console.log('Form Data:', data);
+        setFormData(data);
+        setShowPlacedOrder(true);
+    };
+    const selectedPayments = watch('payment');
+
 
     return (
         <Container className='my-5'>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit(onSubmit)}>
                 <Row className="g-3">
                     <Col md={7} lg={8} className='p-4'>
                         <h4 className="mb-3"><i className="bi bi-geo-alt-fill me-2"></i>Delivery Address</h4>
 
                         <Row className='g-3'>
                             <div className="col-sm-6">
-                                <label htmlForfor="firstName" className="form-label">First name</label>
-                                <input type="text" className="form-control" id="firstName" required />
+                                <label className="form-label">First name</label>
+                                <input type="text" className="form-control" {...register('firstName')} required />
                             </div>
                             <div className="col-sm-6">
-                                <label htmlForfor="lastName" className="form-label">Last name</label>
-                                <input type="text" className="form-control" id="lastName" required />
+                                <label className="form-label">Last name</label>
+                                <input type="text" className="form-control" {...register('lastName')} required />
                             </div>
                             <div className="col-12">
-                                <label htmlForfor="email" className="form-label">Email</label>
-                                <input type="email" className="form-control" id="email" value='abc@gmail.com' disabled readOnly />
+                                <label className="form-label">Email</label>
+                                <input type="email" className="form-control" value='abc@gmail.com' {...register('email')} disabled readOnly />
                             </div>
                             <div className="col-12">
-                                <label htmlForfor="address" className="form-label">Address line 1</label>
-                                <input type="text" className="form-control" id="address" placeholder="House/Apartment/Block" required />
+                                <label className="form-label">Address line 1</label>
+                                <input type="text" className="form-control" placeholder="House/Apartment/Block" {...register('address')} required />
                             </div>
                             <div className="col-12">
-                                <label htmlForfor="address2" className="form-label">Address line 2</label>
-                                <input type="text" className="form-control" id="address2" placeholder="Street/Area/Locality" required />
+                                <label className="form-label">Address line 2</label>
+                                <input type="text" className="form-control" placeholder="Street/Area/Locality" {...register('address2')} required />
                             </div>
                             <div className=" col-md-5">
-                                <label htmlForfor="phone" className="form-label">Phone no.</label>
+                                <label className="form-label">Phone no.</label>
                                 <div className='input-group'>
                                     <span className="input-group-text">+91</span>
-                                    <input type="text" className="form-control" required></input>
+                                    <input type="text" className="form-control"  {...register('phone')} required></input>
                                 </div>
                             </div>
                             <div className="col-md-4">
-                                <label htmlForfor="state" className="form-label">State</label>
-                                <select className="form-select" required>
-                                    <option value="C">Chennai</option>
-                                    <option value="H">Hyderabad</option>
-                                    <option value="M">Mumbai</option>
+                                <label className="form-label">State</label>
+                                <select className="form-select"  {...register('state')} required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option value="Chennai">Chennai</option>
+                                    <option value="Hyderabad">Hyderabad</option>
+                                    <option value="Mumbai">Mumbai</option>
                                 </select>
                             </div>
                             <div className="col-md-3">
-                                <label for="zip" className="form-label">Pincode</label>
-                                <input type="text" className="form-control" id="zip" required />
+                                <label className="form-label">Pincode</label>
+                                <input type="text" className="form-control" {...register('pincode')} required />
                             </div>
                         </Row>
                         <Row className='g-3 mt-5'>
@@ -83,7 +101,7 @@ const Checkout = () => {
                             </Alert>
                             <div className='col-md-4'>
                                 <label className="form-label">For</label>
-                                <select className="form-select" onChange={handleMealChange} required>
+                                <select className="form-select"  {...register('mealType')} onChange={handleMealChange} required>
                                     <option value="" disabled selected>Select meal type</option>
                                     {
                                         mealCategory.map(i => (
@@ -95,7 +113,7 @@ const Checkout = () => {
 
                             <div className='col-md-4'>
                                 <label className="form-label">Select time</label>
-                                <select className="form-select" required>
+                                <select className="form-select" {...register('timeSlot')} required>
                                     <option value="" disabled selected>Set delivery time</option>
                                     {
                                         timeOptions[mealType]?.map((i, index) => (
@@ -107,8 +125,8 @@ const Checkout = () => {
                             {
                                 mealType === 'PreOrder' && (
                                     <div className='col-md-4'>
-                                        <label for="on" className="form-label">Select date</label>
-                                        <input type="date" className='w-100 p-1 text-muted rounded-1 border-1' required />
+                                        <label className="form-label">Select date</label>
+                                        <input type="date" className='w-100 p-1 text-muted rounded-1 border-1' {...register('on')} required />
                                     </div>
                                 )
                             }
@@ -147,18 +165,25 @@ const Checkout = () => {
 
                         <div className="col-md-12 mt-5">
                             <label className="form-label custom-text-color ">Special Instuctions <small className="text-secondary">(Optional)</small></label>
-                            <input type="text" className="form-control " placeholder='Prefer "less spicy"' />
+                            <input type="text" className="form-control " placeholder='Prefer "less spicy"' {...register('instruction')} />
                         </div>
                         <h4 className="mb-3 mt-5 mb-4"><i className="bi bi-wallet-fill me-2"></i>Payment Method</h4>
                         <small className='text-muted'>Select any one payment mode</small>
                         <div className='col-12 mb-4'>
-                            <input type="checkbox" className="btn-check" id="btn-check-outlined" />
-                            <label className="btn btn-outline-dark w-100 text-start" for="btn-check-outlined"><i className="bi bi-credit-card me-3"></i>Pay through Card/UPI</label>
+                            <input type="radio" className="btn-check" id="btn-checkbox" value="Card/UPI"
+                                {...register('payment', { required: 'Please select a payment method' })}
+                            />
+                            <label className="btn btn-outline-dark w-100 text-start" htmlFor="btn-checkbox"><i className="bi bi-credit-card me-3"></i>Pay through Card/UPI</label>
                         </div>
                         <div className='col-12'>
-                            <input type="checkbox" className="btn-check " id="btn-check-2-outlined" />
-                            <label className="btn btn-outline-dark w-100 text-start" for="btn-check-2-outlined"><i className="bi bi-cash me-3"></i>Cash on Delivery</label>
+                            <input type="radio" className="btn-check " id="btn-checkbox2" value="Cash on Delivery"
+                                {...register('payment')} />
+                            <label className="btn btn-outline-dark w-100 text-start" htmlFor="btn-checkbox2"><i className="bi bi-cash me-3"></i>Cash on Delivery</label>
                         </div>
+                        {errors.payment && (
+                            <div className="text-danger mt-2">{errors.payment.message}</div>
+                        )}
+
 
                         <div className='col-12 d-grid gap-3 mt-5'>
                             <Button className='w-100 custom-button-color' type='submit'>Place Order</Button>
@@ -177,7 +202,7 @@ const Checkout = () => {
                     <div className="d-flex flex-column justify-content-center align-items-center my-3">
                         <h4 className='text-center text-success mb-4'>
                             <i className="bi bi-check2-circle text-success me-2"></i>Order placed successfully!</h4>
-                        <Button className="bg-success border-0" onClick={() => navigate('/order')}>
+                        <Button className="bg-success border-0" onClick={() => navigate('/order', { state: formData })}>
                             Check Order Details
                         </Button>
                     </div>
