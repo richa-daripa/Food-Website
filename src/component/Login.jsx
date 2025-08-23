@@ -2,17 +2,16 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Modal, Button, Container } from 'react-bootstrap';
 
-const Login = ({ showLogin, setShowLogin }) => {
+const Login = ({ showLogin, setShowLogin,forwardTo }) => {
     const {
         register,
         handleSubmit,
-        reset, clearErrors
+        reset,
     } = useForm({ mode: 'onChange' });
 
     const handleClose = () => {
         setShowLogin(false);
         reset();
-        clearErrors();
     };
 
     const onSubmit = (data) => {
@@ -60,7 +59,7 @@ const Login = ({ showLogin, setShowLogin }) => {
                             <i className="bi bi-google me-2"></i>
                             Continue with Google
                         </Button>
-                        <p className="mt-4 mb-0 text-center">New to Eatzio? <span className='custom-text-color custom-toggle' >Sign Up</span></p>
+                        <p className="mt-4 mb-0 text-center">New to Eatzio? <span className='custom-text-color custom-toggle' onClick={()=>forwardTo()}>Sign Up</span></p>
 
                     </form>
                 </Modal.Body>

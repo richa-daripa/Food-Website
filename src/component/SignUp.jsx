@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Modal, Button, Container } from 'react-bootstrap';
 import { isPwdValid } from '../data';
 
-const SignUp = ({showSignUp, setShowSignUp}) => {
+const SignUp = ({showSignUp, setShowSignUp, forwardTo}) => {
     const {
         register,
         handleSubmit,
@@ -80,7 +80,7 @@ const SignUp = ({showSignUp, setShowSignUp}) => {
                         </Button>
 
                       <small className="text-primary ms-2">By SignUp, you agree to the terms of use.</small>
-                      <p className="mt-4 mb-0 text-center">Already have an account? <span className='custom-text-color custom-toggle'>Log In</span></p>
+                      <p className="mt-4 mb-0 text-center">Already have an account? <span className='custom-text-color custom-toggle' onClick={()=>forwardTo()}>Log In</span></p>
                     </form>
                 </Modal.Body>
             </Container>

@@ -15,7 +15,7 @@ const Order = () => {
     const bill = getTotalAmount() + 39;
 
     return (
-        <Container fluid className="py-5 bg-warning-subtle vh-100">
+        <Container fluid className="py-5 bg-warning-subtle h-100">
             <div className="d-flex flex-column justify-content-center align-items-center gap-4">
                 <i className="bi bi-patch-check-fill text-success display-4" ></i>
                 <h2 className="text-center fw-bold">

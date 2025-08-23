@@ -15,6 +15,16 @@ const NavBar = () => {
     const [showSignUp, setShowSignUp] = useState(false);
     const navigate = useNavigate();
 
+    const openLogin = () => {
+        setShowLogin(true);
+        setShowSignUp(false);
+    }
+
+    const openSignUp = () => {
+        setShowLogin(false);
+        setShowSignUp(true);
+    }
+
 
     return (
         <Navbar bg="dark" data-bs-theme="dark" className='shadow-sm sticky-top'>
@@ -38,13 +48,13 @@ const NavBar = () => {
                             <Nav.Link as={NavLink} to="/menu" className="text-warning">Menu</Nav.Link>
                             <Nav.Link href="#contact" className="text-warning">Contact</Nav.Link>
                             <hr />
-                            <Button className="custom-button-color" onClick={() => setShowLogin(true)}>
+                            <Button className="custom-button-color" onClick={openLogin}>
                                 Login
                             </Button>
-                            <Button className="custom-button-color" onClick={() => setShowSignUp(true)}>
+                            <Button className="custom-button-color" onClick={openSignUp}>
                                 Sign Up
                             </Button>
-                            <Nav.Link as={NavLink} to="/cart" className="text-warning">My Plate <span class="badge text-bg-info">{totalQuantity()}</span></Nav.Link>
+                            <Nav.Link as={NavLink} to="/cart" className="text-warning">My Plate <span className="badge text-bg-info">{totalQuantity()}</span></Nav.Link>
                             <Nav.Link href="#features" className='text-warning'>Log Out</Nav.Link>
                         </Nav>
                     </Offcanvas.Body>
@@ -58,10 +68,10 @@ const NavBar = () => {
 
 
                 <div className="d-none d-lg-flex gap-3 align-items-center">
-                    <Button className="custom-button-color" onClick={() => setShowLogin(true)}>
+                    <Button className="custom-button-color" onClick={openLogin}>
                         Login
                     </Button>
-                    <Button className="custom-button-color" onClick={() => setShowSignUp(true)}>
+                    <Button className="custom-button-color" onClick={openSignUp}>
                         Sign Up
                     </Button>
                     <Button variant="warning" onClick={() => navigate('/cart')}
@@ -89,8 +99,8 @@ const NavBar = () => {
                 <i className="bi bi-list fs-2 text-white d-flex d-lg-none" onClick={() => setShowOffcanvas(true)}></i>
             </Container>
 
-            <Login showLogin={showLogin} setShowLogin={setShowLogin} />
-            <SignUp showSignUp={showSignUp} setShowSignUp={setShowSignUp} />
+            <Login showLogin={showLogin} setShowLogin={setShowLogin} forwardTo={openSignUp} />
+            <SignUp showSignUp={showSignUp} setShowSignUp={setShowSignUp} forwardTo={openLogin} />
         </Navbar>
 
     )
