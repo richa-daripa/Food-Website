@@ -14,7 +14,7 @@ const NavBar = () => {
     const [showLogin, setShowLogin] = useState(false);
     const [showSignUp, setShowSignUp] = useState(false);
     const navigate = useNavigate();
-    
+
 
     return (
         <Navbar bg="dark" data-bs-theme="dark" className='shadow-sm sticky-top'>
@@ -27,19 +27,25 @@ const NavBar = () => {
                     alt="EatZio"
                 /></Navbar.Brand>
 
-                <Offcanvas show={showOffcanvas} onHide={() => setShowOffcanvas(false)} placement="end" className="text-bg-dark w-50">
+                <Offcanvas show={showOffcanvas} onHide={() => setShowOffcanvas(false)} placement="end" className="text-bg-dark w-75">
                     <Offcanvas.Header closeButton data-bs-theme="dark">
-                        <Offcanvas.Title>Hi, Jannet</Offcanvas.Title>
+                        <Offcanvas.Title className='d-flex align-items-center'><i className="bi bi-person-circle text-secondary display-4 me-2"></i>Hi, Jannet</Offcanvas.Title>
                     </Offcanvas.Header>
                     <hr />
                     <Offcanvas.Body>
-                        <Nav className="flex-column fs-5">
+                        <Nav className="flex-column fs-5 ms-2 gap-2">
                             <Nav.Link as={NavLink} to="/about" className="text-warning">About</Nav.Link>
                             <Nav.Link as={NavLink} to="/menu" className="text-warning">Menu</Nav.Link>
                             <Nav.Link href="#contact" className="text-warning">Contact</Nav.Link>
                             <hr />
-                            <Nav.Link className='text-warning' onClick={()=>navigate('/cart')}>My Plate</Nav.Link>
-                            <Nav.Link href="#features" className='text-warning'><i class="bi bi-box-arrow-right me-2"></i>Logout</Nav.Link>
+                            <Button className="custom-button-color" onClick={() => setShowLogin(true)}>
+                                Login
+                            </Button>
+                            <Button className="custom-button-color" onClick={() => setShowSignUp(true)}>
+                                Sign Up
+                            </Button>
+                            <Nav.Link as={NavLink} to="/cart" className="text-warning">My Plate <span class="badge text-bg-info">{totalQuantity()}</span></Nav.Link>
+                            <Nav.Link href="#features" className='text-warning'>Log Out</Nav.Link>
                         </Nav>
                     </Offcanvas.Body>
                 </Offcanvas>
@@ -47,18 +53,18 @@ const NavBar = () => {
                 <Nav className="d-none d-lg-flex gap-4 mx-auto fs-5">
                     <Nav.Link as={NavLink} to="/about" className='text-warning'>About</Nav.Link>
                     <Nav.Link as={NavLink} to="/menu" className='text-warning'>Menu</Nav.Link>
-                    <Nav.Link  className='text-warning'>Contact</Nav.Link>
+                    <Nav.Link className='text-warning'>Contact</Nav.Link>
                 </Nav>
 
-                <Button className="me-2 custom-button-color" onClick={() => setShowLogin(true)}>
-                    Login
-                </Button>
-                <Button className="me-2 custom-button-color" onClick={() => setShowSignUp(true)}>
-                    Sign Up
-                </Button>
 
                 <div className="d-none d-lg-flex gap-3 align-items-center">
-                    <Button variant="warning" onClick={()=>navigate('/cart')}
+                    <Button className="custom-button-color" onClick={() => setShowLogin(true)}>
+                        Login
+                    </Button>
+                    <Button className="custom-button-color" onClick={() => setShowSignUp(true)}>
+                        Sign Up
+                    </Button>
+                    <Button variant="warning" onClick={() => navigate('/cart')}
                         className="position-relative ">My Plate
                         <span className="position-absolute top-0 start-100 translate-middle rounded-circle fw-bold d-flex align-items-center justify-content-center number-badge">
                             {totalQuantity()}
@@ -74,7 +80,7 @@ const NavBar = () => {
                             <DropdownDivider />
                             <Dropdown.Item ><i class="bi bi-bag-check-fill me-2"></i>Your Orders</Dropdown.Item>
                             <Dropdown.Item ><i class="bi bi-headset me-2"></i>Help & Support</Dropdown.Item>
-                             <DropdownDivider />
+                            <DropdownDivider />
                             <Dropdown.Item >Log Out</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
@@ -84,7 +90,7 @@ const NavBar = () => {
             </Container>
 
             <Login showLogin={showLogin} setShowLogin={setShowLogin} />
-            <SignUp showSignUp={showSignUp} setShowSignUp={setShowSignUp}/>
+            <SignUp showSignUp={showSignUp} setShowSignUp={setShowSignUp} />
         </Navbar>
 
     )

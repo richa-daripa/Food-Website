@@ -29,7 +29,7 @@ const Login = ({ showLogin, setShowLogin }) => {
         >
             <Container className='my-3'>
                 <Modal.Header className='border-bottom-0' closeButton>
-                    <Modal.Title >Welcome back! <br />Login to your account</Modal.Title>
+                    <Modal.Title className='fs-2'>Welcome back! <br />Login to your account</Modal.Title>
                 </Modal.Header>
                 <Modal.Body >
 
@@ -60,7 +60,7 @@ const Login = ({ showLogin, setShowLogin }) => {
                             <i className="bi bi-google me-2"></i>
                             Continue with Google
                         </Button>
-                        <p className="mt-4 text-center">New to Eatzio? <span className='custom-text-color custom-toggle' >Sign Up</span></p>
+                        <p className="mt-4 mb-0 text-center">New to Eatzio? <span className='custom-text-color custom-toggle' >Sign Up</span></p>
 
                     </form>
                 </Modal.Body>

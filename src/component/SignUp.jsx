@@ -31,7 +31,7 @@ const SignUp = ({showSignUp, setShowSignUp}) => {
         >
             <Container className='my-3'>
                 <Modal.Header className='border-bottom-0' closeButton>
-                    <Modal.Title >Join us <br /> Create a Eatzio account</Modal.Title>
+                    <Modal.Title className='fs-2'>Join us <br /> Create a Eatzio account</Modal.Title>
                 </Modal.Header>
                 <Modal.Body >
                    
@@ -80,7 +80,7 @@ const SignUp = ({showSignUp, setShowSignUp}) => {
                         </Button>
 
                       <small className="text-primary ms-2">By SignUp, you agree to the terms of use.</small>
-                      <p className="mt-4 text-center">Already have an account? <span className='custom-text-color custom-toggle'>Log In</span></p>
+                      <p className="mt-4 mb-0 text-center">Already have an account? <span className='custom-text-color custom-toggle'>Log In</span></p>
                     </form>
                 </Modal.Body>
             </Container>

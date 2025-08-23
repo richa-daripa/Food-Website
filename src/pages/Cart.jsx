@@ -14,13 +14,13 @@ const Cart = () => {
             {
                 Object.keys(cartItems).length > 0 ? (
                     <>
-                        <h2 className='text-center mb-5 bg-warning bg-opacity-50 my-4 p-2'><i className="bi bi-fork-knife me-2 fs-3"></i>Your Plate <i className="bi bi-cup-hot-fill ms-2"></i></h2>
+                        <h2 className='text-center mb-5 bg-warning bg-opacity-50 my-4 p-2'>Your Plate</h2>
                         <Container className="py-4">
                             <Row className="g-5">
                                 <Col md={7} lg={8} >
                                     <h4 className="d-flex justify-content-between align-items-center mb-3">
                                         <span >Food Items </span>
-                                        <span className="badge bg-warning-subtle text-dark">{totalQuantity()}</span>
+                                        <span className="badge fs-5 bg-warning-subtle text-dark">{totalQuantity()}</span>
                                     </h4>
                                     <ListGroup className="d-grid gap-2">
                                         {
@@ -33,10 +33,10 @@ const Cart = () => {
                                 </Col>
 
                                 <Col md={5} lg={4}>
-                                    <Card className="border-warning border-2 rounded-4">
+                                    <Card className="border-warning border-2 rounded-4 shadow">
                                         <Card.Body>
                                             <Card.Title className="border-bottom fs-4 border-3 border-warning pb-2">
-                                                   <i className="bi bi-tag-fill text-secondary"></i> Price Details</Card.Title>
+                                                   <i className="bi bi-tag-fill text-success"></i> Price Details</Card.Title>
                                             
                                             <div className="d-flex justify-content-between border-bottom border-dark pt-2 ">
                                                 <p>Total Price</p>
@@ -98,7 +98,7 @@ const Cart = () => {
                                 <img src={delItemImage} alt="Item to be removed" className="img-fluid" width="150px" height="120px" />
                             </div>
                         )}
-                        <div className="col-12 col-md-8">
+                        <div className="col-12 col-md-8 d-grid gap-3">
                             <h5>Remove from Plate?</h5>
                             <p>Are you sure you want to remove this food item from your plate?</p>
                         </div>
