@@ -43,7 +43,7 @@ const FoodDisplay = () => {
 
     return (
         <Container fluid className='bg-custom-color py-5'>
-            <h2 className='text-center mb-4'>{category.toUpperCase()}</h2>
+            <h2 className='text-center mb-4 heading-style'>{category.toUpperCase()}</h2>
             <div className="container d-flex justify-content-center align-items-center mt-2 translate-middle position-fixed start-50 top-20"
                 style={{ zIndex: '1090' }}>
                 <Toast onClose={() => setShow(false)} show={show} delay={1000} autohide className='z-3 rounded-5'>

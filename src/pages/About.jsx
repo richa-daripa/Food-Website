@@ -15,7 +15,7 @@ const About = () => {
                 <Carousel.Item >
                     <img src={about1} alt="" className='d-block w-100' />
                     <Carousel.Caption className='d-flex flex-column align-items-center justify-content-center gap-4 h-100 ' >
-                        <h2>Your Meal, Just How You Like It</h2>
+                        <h2 className='fs-1 heading-style'>Your Meal, Just How You Like It</h2>
                         <p className='fs-5 w-75'>Ready When You Are.
                             From breakfast to dinner, experience the taste of home wherever you are. Your perfect meal awaits.</p>
                     </Carousel.Caption>
@@ -23,7 +23,7 @@ const About = () => {
                 <Carousel.Item>
                     <img src={about2} alt="" className='d-block w-100' />
                     <Carousel.Caption className='d-flex flex-column align-items-center justify-content-center gap-4 h-100 ' >
-                        <h2>Discover Your Next Craving</h2>
+                        <h2 className='fs-1 heading-style'>Discover Your Next Craving</h2>
                         <p className='fs-5 w-75'>Hungry? We've Got You!
                             Freshly homemade meals cooked with love in our kitchen. Whatever you are in the mood for, we will cook for you.</p>
                     </Carousel.Caption>
@@ -31,7 +31,7 @@ const About = () => {
                 <Carousel.Item>
                     <img src={about3} alt="" className='d-block w-100' />
                     <Carousel.Caption className='d-flex flex-column align-items-center justify-content-center gap-4 h-100 '>
-                        <h2>Crafted By Home Chefs</h2>
+                        <h2 className='fs-1 heading-style'>Crafted By Home Chefs</h2>
                         <p className='fs-5 w-75'>
                             Behind every delicious dish is a culinary master. We partner with dedicated home cooks passionate about creating meals, just for you.</p>
                     </Carousel.Caption>
@@ -69,7 +69,7 @@ const About = () => {
 
             <div className='py-5 bg-warning bg-opacity-25'>
                 <Container className='d-grid px-4 '>
-                    <h1 className='text-center'>What is Eatzio?</h1>
+                    <h1 className='text-center mb-4'>What is Eatzio?</h1>
                     <Row className="align-items-center my-4">
                         <div className="col-md-7">
                             <h3>A Taste of Home</h3>
