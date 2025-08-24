@@ -21,7 +21,6 @@ body {
 
 .icon-pointer::after {
   display: none !important;
-  /* Hides the arrow */
 }
 
 /*header*/
@@ -49,10 +48,7 @@ body {
 }
 
 
-/* This will ensure the text block doesn't get too wide on larger screens */
 @media (min-width: 992px) {
-
-  /* Applies from large (lg) devices and up */
   .mx-width {
     max-width: 45%;
   }
@@ -161,17 +157,11 @@ body {
   width: 100%;
   height: auto;
   min-height: 500px;
-  /* Adjust this value as needed */
   object-fit: cover;
-
 }
 
-.carousel-item p{
+.carousel-item p {
   color: rgb(187, 186, 186);
-}
-
-.heading-style{
-  font-family: Oregano;
 }
 
 .carousel-indicators [data-bs-target] {
@@ -183,6 +173,7 @@ body {
   margin: 0 5px !important;
   opacity: 0.5 !important;
 }
+
 .carousel-indicators .active {
   opacity: 1 !important;
 }
@@ -190,7 +181,6 @@ body {
 
 .text-indent {
   text-indent: 2em;
-  /* Adjust to your desired indentation */
 }
 
 @keyframes slide-up {
@@ -220,22 +210,28 @@ body {
 }
 
 /*cart*/
-.text-wrapping{
+.text-wrapping {
   overflow-wrap: break-word;
   word-break: break-word;
 }
 
 
 /*----------------------------------------------------------*/
-.custom-button-color{
+.custom-button-color {
   background: #ff8820 !important;
   border: none !important;
   outline: none !important;
-  color: black !important; 
+  color: black !important;
 }
+
 .custom-button-color:hover {
-    background-color: #ff9a41 !important;
+  background-color: #ff9a41 !important;
 }
-.custom-text-color{
-  color: #f4511e ;
+
+.custom-text-color {
+  color: #f4511e;
+}
+
+.heading-style {
+  font-family: Oregano;
 }
