@@ -54,6 +54,9 @@ body {
   }
 }
 
+.navbar-text-color{
+  color:rgb(255, 186, 102) !important;
+}
 
 /*explore menu*/
 .explore-menu-card-style {
@@ -235,3 +238,4 @@ body {
 .heading-style {
   font-family: Oregano;
 }
+
