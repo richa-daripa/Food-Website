@@ -9,6 +9,7 @@ import Order from './pages/Order';
 import './style.css'
 import Cart from './pages/Cart';
 import About from './pages/About';
+import ScrollToTop from './pages/ScrollToTop';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <>
+    <ScrollToTop/>
     {!hideNavbar && <NavBar/>}
       <Routes>
           <Route path='/' element={<Home />} />
