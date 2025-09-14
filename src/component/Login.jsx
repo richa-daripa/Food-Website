@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Modal, Button, Container } from 'react-bootstrap';
+import { Alert, Modal, Button, Container } from 'react-bootstrap';
+import { AuthContext } from '../contextapi/AuthContext';
 
-const Login = ({ showLogin, setShowLogin,forwardTo }) => {
+
+
+const Login = ({ showLogin, setShowLogin, forwardTo }) => {
     const {
         register,
         handleSubmit,
@@ -14,9 +17,21 @@ const Login = ({ showLogin, setShowLogin,forwardTo }) => {
         reset();
     };
 
+    const [showLogError, setShowLogError] = useState(false);
+    const { login } = useContext(AuthContext);
+
     const onSubmit = (data) => {
         console.log("Form Data:", data);
-        handleClose();
+        const success = login(data);
+        if (!success) {
+            setShowLogError(true);
+            setTimeout(() => {
+                setShowLogError('');
+            }, 4000)
+        } else {
+            handleClose();
+        }
+
     };
 
     return (
@@ -31,6 +46,15 @@ const Login = ({ showLogin, setShowLogin,forwardTo }) => {
                     <Modal.Title className='fs-2'>Welcome back! <br />Login to your account</Modal.Title>
                 </Modal.Header>
                 <Modal.Body >
+                    {
+                        showLogError && (
+                            <Alert className='bg-danger-subtle text-center mt-3 mb-5 border-0 py-2 rounded-1'>
+                                <span className='text-danger'><i className="bi bi-exclamation-triangle-fill me-3 text-danger"></i>
+                                    Either email or password is incorrect
+                                </span>
+                            </Alert>
+                        )
+                    }
 
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-floating mb-3">
@@ -59,7 +83,7 @@ const Login = ({ showLogin, setShowLogin,forwardTo }) => {
                             <i className="bi bi-google me-2"></i>
                             Continue with Google
                         </Button>
-                        <p className="mt-4 mb-0 text-center">New to Eatzio? <span className='custom-text-color custom-toggle' onClick={()=>forwardTo()}>Sign Up</span></p>
+                        <p className="mt-4 mb-0 text-center">New to Eatzio? <span className='custom-text-color custom-toggle' onClick={() => forwardTo()}>Sign Up</span></p>
 
                     </form>
                 </Modal.Body>

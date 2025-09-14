@@ -29,7 +29,7 @@ const Order = () => {
                                     Your Order Summary
                                 </h4>
                                 <p><span className="fw-semibold">Delivery Address:</span> {`${state?.firstName} ${state?.lastName}, ${state?.address}, ${state?.address2}, ${state?.state}, ${state?.pincode}`}</p>
-                                <p>{`For ${state?.mealType} at ${state?.timeSlot} on ${state?.on} | Prefered - ${state?.instruction || "None"}`}</p>
+                                <p>{`For ${state?.mealType} at ${state?.timeSlot} on ${state?.on} | Preferred - ${state?.instruction || "None"}`}</p>
                                 <p>Total Bill:<strong> {`Rs ${bill.toFixed(2)}`}</strong>{` | `} Mode of Payment: {state?.payment}</p>
                                 <ListGroup as="ol" numbered>
                                     {food_item.filter((item) => cartItems[item.id] > 0).map((item) => (

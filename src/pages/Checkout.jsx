@@ -4,9 +4,11 @@ import { Button, Alert, Col, Container, ListGroup, Row, Form, Modal } from 'reac
 import { StoreContext } from '../contextapi/ContextAPI';
 import { timeOptions, mealCategory } from '../data';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../contextapi/AuthContext';
 
 const Checkout = () => {
     const { getTotalAmount, totalQuantity } = useContext(StoreContext);
+    const { user } = useContext(AuthContext);
     const [showPlacedOrder, setShowPlacedOrder] = useState(false);
     const navigate = useNavigate();
 
@@ -15,15 +17,6 @@ const Checkout = () => {
         setMealType(e.target.value);
     }
     const [formData, setFormData] = useState(null);
-    /*
-        const handleSubmit = (e) => {
-            e.preventDefault();
-            if (e.target.checkValidity()) {
-                setShowPlacedOrder(true);
-            } else {
-                e.target.reportValidity();
-            }
-        }*/
 
     const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm();
 
@@ -60,7 +53,7 @@ const Checkout = () => {
                             </div>
                             <div className="col-12">
                                 <label className="form-label">Email</label>
-                                <input type="email" className="form-control" value='abc@gmail.com' {...register('email')} disabled readOnly />
+                                <input type="email" className="form-control" value={user?.email||''} {...register('email')} disabled readOnly />
                             </div>
                             <div className="col-12">
                                 <label className="form-label">Address line 1</label>
