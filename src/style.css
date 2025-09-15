@@ -163,7 +163,7 @@ body {
   object-fit: cover;
 }
 
-.carousel-item p {
+.carousel-item p, .login-style {
   color: rgb(187, 186, 186);
 }
 

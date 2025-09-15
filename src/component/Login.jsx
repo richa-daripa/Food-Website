@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Alert, Modal, Button, Container } from 'react-bootstrap';
+import { Modal, Button, Container } from 'react-bootstrap';
 import { AuthContext } from '../contextapi/AuthContext';
-
-
+import { FcGoogle } from "react-icons/fc";
 
 const Login = ({ showLogin, setShowLogin, forwardTo }) => {
     const {
@@ -48,11 +47,9 @@ const Login = ({ showLogin, setShowLogin, forwardTo }) => {
                 <Modal.Body >
                     {
                         showLogError && (
-                            <Alert className='bg-danger-subtle text-center mt-3 mb-5 border-0 py-2 rounded-1'>
-                                <span className='text-danger'><i className="bi bi-exclamation-triangle-fill me-3 text-danger"></i>
-                                    Either email or password is incorrect
-                                </span>
-                            </Alert>
+                            <span className='d-block text-center text-danger mb-4'><i className="bi bi-exclamation-triangle-fill me-3 text-danger"></i>
+                                Invalid email or password
+                            </span>
                         )
                     }
 
@@ -78,9 +75,14 @@ const Login = ({ showLogin, setShowLogin, forwardTo }) => {
                             Log In
                         </Button>
 
-                        <p className="fs-6 text-center text-secondary my-3 fs-5">or</p>
-                        <Button variant="outline-dark w-100" className='mb-3 rounded-3'>
-                            <i className="bi bi-google me-2"></i>
+                        <div class="d-flex align-items-center my-4">
+                            <hr class="flex-grow-1 border-secondary" />
+                            <p class="fs-6 text-center login-style mx-5 mb-0">OR</p>
+                            <hr class="flex-grow-1 border-secondary" />
+                        </div>
+
+                        <Button variant="outline-dark w-100" className='mb-3 rounded-3 d-flex align-items-center justify-content-center'>
+                            <FcGoogle size={22} className='me-2'/>
                             Continue with Google
                         </Button>
                         <p className="mt-4 mb-0 text-center">New to Eatzio? <span className='custom-text-color custom-toggle' onClick={() => forwardTo()}>Sign Up</span></p>
